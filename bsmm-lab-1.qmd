@@ -29,7 +29,7 @@ The `Teams` dataset has \_\_\_ observations and \_\_\_ variables.
 
 ### Exercise 2
 
-...
+...![]()
 
 ### Exercise 3
 
