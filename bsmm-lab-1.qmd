@@ -27,13 +27,41 @@ dplyr::glimpse(Teams)
 
 The `Teams` dataset has \_\_\_ observations and \_\_\_ variables.
 
+```{r}
+library(Lahman)
+dim(Teams)
+```
+
+```{r}
+?Teams
+```
+
+```{r}
+dplyr::glimpse(Teams)
+```
+
 ### Exercise 2
 
-...![]()
+```{r}
+mets <- Teams  %>%  
+  dplyr::filter(teamID == "NYN")
+my_mets <- mets %>% 
+  dplyr::filter(_yearID %in% 2004:2012)
+my_mets %>% 
+  dplyr::select(yearId,G,W,L)
+```
+
+![]()
 
 ### Exercise 3
 
-...
+```{r}
+mets_ben <- Teams |>
+  dplyr::select(_, _, _, _, _, _) |>
+  dplyr::filter(_ == "NYN" & _ %in% 2004:2012)
+mets_ben
+z
+```
 
 ### Exercise 4
 
