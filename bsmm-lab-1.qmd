@@ -1,8 +1,8 @@
 ---
 title: "BSMM-lab-1"
 subtitle: "BSMM 8740 Fall 2023"
-author: Aman Aman
-date: 11 September 2023
+author: Aman
+date: 18 September 2023
 format: html
 editor: visual
 self-contained: true
