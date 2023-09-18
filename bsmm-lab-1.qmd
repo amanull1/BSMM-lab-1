@@ -43,12 +43,14 @@ dplyr::glimpse(Teams)
 ### Exercise 2
 
 ```{r}
-mets <- Teams  %>%  
-  dplyr::filter(teamID == "NYN")
+library(dplyr) #installing deplyr packages
+mets <- Teams  %>% 
+  dplyr::filter(teamID == "NYN") #filter team data for New York based on TamId
+
 my_mets <- mets %>% 
-  dplyr::filter(_yearID %in% 2004:2012)
+  dplyr::filter(yearID >= 2004 & yearID <=2012) #filtering team data for NY based on year 
 my_mets %>% 
-  dplyr::select(yearId,G,W,L)
+  dplyr::select(yearID,G,W,L) #Selecting columns year, W and L Team's performance
 ```
 
 ![]()
@@ -57,15 +59,17 @@ my_mets %>%
 
 ```{r}
 mets_ben <- Teams |>
-  dplyr::select(_, _, _, _, _, _) |>
-  dplyr::filter(_ == "NYN" & _ %in% 2004:2012)
+  dplyr::select(yearID, teamID, G, W, L, RA, RS=R) |>
+  dplyr::filter(teamID == "NYN" & yearID %in% 2004:2012)
 mets_ben
-z
+
 ```
 
 ### Exercise 4
 
-...
+```{r}
+
+```
 
 ### Exercise 5
 
