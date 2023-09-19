@@ -135,4 +135,42 @@ mets_ben %>%
 
 ### Exercise 10
 
-...
+```{r}
+mets_ben <- mets_ben %>% 
+  dplyr::mutate(
+    gm = ifelse(
+      yearID == 2004, 
+      "Duquette", 
+      ifelse(
+        yearID >= 2011, 
+        "Alderson", 
+        "Minaya")
+    )
+  )
+```
+
+```{r}
+mets_ben <- mets_ben %>% 
+  dplyr::mutate(
+    gm = dplyr::case_when(
+      yearID == 2004 ~ "Duquette", 
+      yearID >= 2011 ~ "Alderson", 
+      TRUE ~ "Minaya"
+    )
+  )
+```
+
+**Exercise 11**
+
+```{r}
+mets_ben %>% 
+  group_by(gm) %>% 
+  summarize(
+    num_years = n(), 
+    total_W = sum(W), 
+    total_L = sum(L), 
+    total_WPct = sum(W) / sum(W + L), 
+    sum_resid = sum(W - W_hat)
+  ) %>%
+  arrange(desc(sum_resid))
+```
